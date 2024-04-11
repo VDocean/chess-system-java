@@ -2,6 +2,7 @@ package chess_system;
 
 
 import java.util.ArrayList;
+
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -22,7 +23,7 @@ public class Program {
 		
        
         
-        while (true) {
+        while (!chessMatch.getCheckMate()) {
         	try {
 				UI.clearScreen();
 				
@@ -52,10 +53,12 @@ public class Program {
 				System.out.println(e.getMessage());
 				sc.nextLine();
 			}
-			
-		}
-		
+        	
         
+		}
+        
+    	UI.clearScreen();
+		UI.printMatch(chessMatch, captured);
 	}
 
 }
